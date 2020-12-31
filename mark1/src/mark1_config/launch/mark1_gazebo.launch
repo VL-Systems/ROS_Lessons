@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+   <!-- global params-->
+    <arg name="robot" default="mark1"/>
+  
+    <!-- URDF description -->
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find mark1)/src/mark1_description/urdf/mark1.xacro'"/>
+
+   <!-- TF stuff -->
+        <!-- send fake joint values -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="False"/>
+    </node>
+
+        <!-- Combine joint values -->
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+    
+        <!-- fixed odom -->
+    <node pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
+        args="0 0 0 0 0 0 map odom 100"/>    
+    
+    <!-- run gazebo and spawn mybot -->
+    <include file="$(find mark1)/src/mark1_gazebo/launch/mark1_world.launch"/>
+    
+    
+  
+    
+     <!-- visualization -->      
+    <node name="rviz" pkg="rviz" type="rviz" />      
+</launch>
