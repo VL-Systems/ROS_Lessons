@@ -54,11 +54,8 @@
       <mass
         value="1.483" />
       <inertia
-        ixx="0.0078938"
-        ixy="1.3747E-18"
-        ixz="-2.0644E-19"
-        iyy="0.014347"
-        iyz="-3.4936E-18"
+        ixx="0.0078938" ixy="1.3747E-18" ixz="-2.0644E-19"
+        iyy="0.014347" iyz="-3.4936E-18"
         izz="0.0078938" />
     </inertial>
     <visual>
@@ -117,7 +114,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mark1/src/mark1_description/meshes/Right_Motor_Joint.STL" />
+          filename="package://mark1/src/mark1_description/meshes/Right_Motor_Link.STL" />
       </geometry>
       <material
         name="">
@@ -131,7 +128,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mark1/src/mark1_description/meshes/Right_Motor_Joint.STL" />
+          filename="package://mark1/src/mark1_description/meshes/Right_Motor_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -146,36 +143,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
-  <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0" />
-    <origin xyz="-0.15 0 .18" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="hokuyo"/>
-  </joint>
-  <!-- Hokuyo Laser -->
-  <link name="hokuyo">
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-    <box size="0.1 0.1 0.1"/>
-      </geometry>
-    </collision>
-
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://mark1/src/mark1_description/meshes/hokuyo.dae"/>
-      </geometry>
-    </visual>
-
-    <inertial>
-      <mass value="1e-5" />
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
-   
-   
-   
+ 
 
 </robot>
