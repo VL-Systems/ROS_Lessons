@@ -27,5 +27,5 @@
   
     
      <!-- visualization -->      
-    <node name="rviz" pkg="rviz" type="rviz" />      
+    <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find mark1)/src/mark1_config/rviz/mark1_gazebo.rviz"/>      
 </launch>
