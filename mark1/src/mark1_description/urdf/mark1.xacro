@@ -145,10 +145,10 @@
     <axis xyz="0 1 0" />
     <origin xyz="-0.1 0 0.19" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="hokuyo_link"/>
+    <child link="hokuyo"/>
   </joint>
   <!-- Hokuyo Laser -->
-  <link name="hokuyo_link">
+  <link name="hokuyo">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
