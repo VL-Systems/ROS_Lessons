@@ -1,0 +1,5 @@
+<launch>
+    
+    <include file="$(find mark1)/src/mark1_2dnav/launch/mark1_move_base.launch"/>
+    
+</launch>

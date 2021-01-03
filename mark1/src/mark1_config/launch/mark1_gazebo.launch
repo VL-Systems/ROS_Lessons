@@ -23,7 +23,9 @@
     <!-- run gazebo and spawn mybot -->
     <include file="$(find mark1)/src/mark1_gazebo/launch/mark1_world.launch"/>
     
-    
+    <!-- software -->
+
+    <include file="$(find mark1)/src/mark1_config/launch/mark1_software.launch"/>
   
     
      <!-- visualization -->      

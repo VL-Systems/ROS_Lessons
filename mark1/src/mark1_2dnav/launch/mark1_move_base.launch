@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+   
+    <!-- Run the map server --> 
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find mark1)/src/mark1_2dnav/config/map_empty.yaml"/>
+
+    <!--- Run AMCL --> 
+    <!--<include file="$(find amcl)/examples/amcl_omni.launch" />-->
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        
+        <rosparam file="$(find mark1)/src/mark1_2dnav/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        
+        <rosparam file="$(find mark1)/src/mark1_2dnav/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        
+        <rosparam file="$(find mark1)/src/mark1_2dnav/config/local_costmap_params.yaml" command="load" />
+        
+        <rosparam file="$(find mark1)/src/mark1_2dnav/config/global_costmap_params.yaml" command="load" /> 
+        
+        <rosparam file="$(find mark1)/src/mark1_2dnav/config/move_base_params.yaml" command="load" />
+ </node>
+
+</launch> 
