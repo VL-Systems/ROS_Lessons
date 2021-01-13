@@ -14,3 +14,5 @@
 1. Создание виртуального робота и настройка окружения: Commit: 02.01.21 Lesson_1
 2. Добавление датчиков в модель робота: Commit: 02.01.21 Lesson_2 Add sensor
 3. Настройка Move_Base: Commit: 03.01.21 Lesson_3 move_base V1.2
+4. Настройка RViz: Commit 13.01.21 Lesson_4 Rviz
+

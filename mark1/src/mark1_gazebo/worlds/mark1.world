@@ -16,6 +16,12 @@
       <uri>model://sun</uri>
     </include>
 
+    <!-- My World -->
+    <!--include>
+      <uri>model://wall_1</uri>
+    </include-->
+
+
     <!-- Focus camera on tall pendulum -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
@@ -23,6 +29,8 @@
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
+  
+ 
 
   </world>
 </sdf>
