@@ -1,4 +1,4 @@
-!!python/object/new:dynamic_reconfigure.encoding.Config
+
 dictitems:
   acc_lim_theta: 15.0
   acc_lim_trans: 0.27356904308223723
@@ -7,7 +7,7 @@ dictitems:
   angular_sim_granularity: 0.1
   forward_point_distance: 0.325
   goal_distance_bias: 28.0
-  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+  groups: 
     dictitems:
       acc_lim_theta: 15.0
       acc_lim_trans: 0.27356904308223723
@@ -16,7 +16,7 @@ dictitems:
       angular_sim_granularity: 0.1
       forward_point_distance: 0.325
       goal_distance_bias: 28.0
-      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+      groups: 
         state: []
       id: 0
       max_scaling_factor: 0.2
@@ -32,7 +32,7 @@ dictitems:
       occdist_scale: 0.01
       oscillation_reset_angle: 10.0
       oscillation_reset_dist: 0.05
-      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+      parameters: 
         state: []
       parent: 0
       path_distance_bias: 32.0

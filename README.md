@@ -16,4 +16,5 @@
 3. Настройка Move_Base: Commit: 03.01.21 Lesson_3 move_base V1.2
 4. Настройка RViz: Commit 13.01.21 Lesson_4 Rviz
 5. Создание нового мира в Gazebo: 13.01.21 Lesson_5 Create new Gazebo world
+6. Настройка AMCL: 15.01.21 Lesson_6 AMCL
 
