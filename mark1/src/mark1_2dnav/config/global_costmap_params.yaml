@@ -1,7 +1,6 @@
 global_costmap:
   global_frame: map
   robot_base_frame: base_link
-  transform_rolerance: 2.4
-  update_frequency: 2.0
-  publish_frequency: 2.0
-  static_map: false
+  update_frequency: 1.0
+  publish_frequency: 0.0
+  static_map: true
