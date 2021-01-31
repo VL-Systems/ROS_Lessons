@@ -17,4 +17,5 @@
 4. Настройка RViz: Commit 13.01.21 Lesson_4 Rviz
 5. Создание нового мира в Gazebo: 13.01.21 Lesson_5 Create new Gazebo world
 6. Настройка AMCL: 18.01.21 Lesson_6 AMCL V1.2
+7. Добавление камеры глубины Kinect: 31.01.21 Lesson_7 DepthCamera V1.0
 

@@ -33,3 +33,20 @@ laser_obstacle_layer:
         obstacle_range: 10.
         raytrace_range: 12.
         inf_is_valid: true
+
+depth_obstacle_layer:
+    observation_sources: point_cloud_kinect        
+    track_unknown_space: false
+    footprint_clearing_enabled: true
+    combination_method: 1  # 0 - overwrite, 1 - max, 99 - nothing
+        
+    point_cloud_kinect:
+        sensor_frame: depth_camera_optical
+        data_type: PointCloud2
+        topic: mark1/depth_camera/depth/points
+        marking: true
+        clearing: true
+        min_obstacle_height: 0.1
+        max_obstacle_height: 0.8
+        obstacle_range: 4.
+        raytrace_range: 5.
