@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  
-	
-	 <arg name="localization_type" default="AMCL"/>
+   <!-- global params-->
+    <arg name="localization_type" default="AMCL"/>
     <!-- Possible variants
         FIXED_ODOM   
         AMCL
-       GMAPPING
+        GMAPPING
     -->
- 
-	<arg name="map" default="nothing"/>
-	<!-- Possible maps 
+    <arg name="map" default="my_map"/>
+    <!-- Possible maps 
         nothing
         my_map
-		-->
+    -->
   
     <!-- URDF description -->
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find mark1)/src/mark1_description/urdf/mark1.xacro'"/>
@@ -27,18 +25,22 @@
 
         <!-- Combine joint values -->
       <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
-  
+    
+        <!-- fixed odom -->
+    <!--<node pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
+        args="0 0 0 0 0 0 map odom 100"/>    -->  
     
     <!-- run gazebo and spawn mybot -->
     <include file="$(find mark1)/src/mark1_gazebo/launch/mark1_world.launch"/>
     
-   
-        <include file="$(find mark1)/src/mark1_config/launch/mark1_software.launch">
-		    <arg name="localization_type" value="$(arg localization_type)"/>
-			<arg name="map" value="$(arg map)"/>
-        </include>
-        
- 
+    <!-- software -->
+
+    <include file="$(find mark1)/src/mark1_config/launch/mark1_software.launch">
+	<arg name="localization_type" value="$(arg localization_type)"/>
+        <arg name="map" value="$(arg map)"/>
+    </include>
+  
+    
      <!-- visualization -->      
     <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find mark1)/src/mark1_config/rviz/mark1_gazebo.rviz"/>      
 </launch>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-
+    
     <arg name="localization_type" default="AMCL"/>
     <!-- Possible variants
         FIXED_ODOM   
@@ -13,8 +13,6 @@
         nothing
         my_map
 		-->
-
-
 <!-- fixed odom -->
     <node if="$(eval localization_type == 'FIXED_ODOM')" pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
         args="0 0 0 0 0 0 map odom 100"/>  
@@ -25,8 +23,8 @@
     <node if="$(eval localization_type == 'AMCL' and map == 'nothing')" name="map_server" pkg="map_server" type="map_server" args="$(find mark1)/src/mark1_2dnav/config/map_empty.yaml"/>
     
     <node if="$(eval localization_type == 'AMCL' and map == 'my_map')" name="map_server" pkg="map_server" type="map_server" args="$(find mark1)/src/mark1_2dnav/maps/my_map.yaml"/>
-     
-	 <!--- Run AMCL --> 
+
+     <!--- Run AMCL --> 
     <node if="$(eval localization_type == 'AMCL')" pkg="amcl" type="amcl" name="amcl" output="screen">
         <!-- Publish scans from best pose at a max of 10 Hz -->
         <param name="odom_model_type" value="diff"/>
@@ -66,8 +64,8 @@
         <remap from="scan" to="/mark1/laser/scan"/>
         
     </node>
-	
-	<!-- gmapping -->
+
+     <!-- gmapping -->
     <node if="$(eval localization_type == 'GMAPPING')" pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen">                
         <param name="base_frame" value="base_link"/>
         <param name="maxRange" value="29"/>
@@ -75,7 +73,7 @@
         
         <remap from="scan" to="/mark1/laser/scan"/>        
     </node>
-    
+
     <include file="$(find mark1)/src/mark1_2dnav/launch/mark1_move_base.launch"/>
     
 </launch>
