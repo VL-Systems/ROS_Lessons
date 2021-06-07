@@ -18,4 +18,5 @@
 5. Создание нового мира в Gazebo: 13.01.21 Lesson_5 Create new Gazebo world
 6. Настройка AMCL/GMAPPING: 31.05.21 Lesson_6 AMCL/GMAPPING V1.3
 7. Добавление камеры глубины: 7.06.21 Lesson_7 Kinect V1.0
+8. Добавление subscriber for AMCL 
 
