@@ -12,8 +12,8 @@
         <rosparam file="$(find mark1)/src/mark1_2dnav/config/global_costmap_params.yaml" command="load" /> 
         
         <rosparam file="$(find mark1)/src/mark1_2dnav/config/mark1_param_1.yaml" command="load" />
-        <remap from="cmd_vel" to="cmd_vel"/>
-        <remap from="odom" to="odom"/>
+        <!--remap from="cmd_vel" to="cmd_vel"/>
+        <remap from="odom" to="odom"/-->
 
  </node>
 

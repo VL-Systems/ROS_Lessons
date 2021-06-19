@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /LocalPlanner1
         - /DepthCloud1/Auto Size1
         - /PointCloud21
       Splitter Ratio: 0.5
@@ -118,7 +119,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        hokuyo:
+        laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -154,7 +155,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.029999999329447746
       Style: Flat Squares
-      Topic: /mark1/laser/scan
+      Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -281,7 +282,7 @@ Visualization Manager:
           Value: true
         depth_camera_optical:
           Value: true
-        hokuyo:
+        laser_link:
           Value: true
         map:
           Value: true
@@ -305,7 +306,7 @@ Visualization Manager:
               depth_camera_link:
                 depth_camera_optical:
                   {}
-              hokuyo:
+              laser_link:
                 {}
       Update Interval: 0
       Value: true
@@ -415,25 +416,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.552162170410156
+      Distance: 3.4950597286224365
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.6047511100769043
-        Y: 1.3431130647659302
-        Z: 1.7681163549423218
+        X: 2.865493059158325
+        Y: -0.11080388724803925
+        Z: 2.4235928058624268
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5397960543632507
+      Pitch: 1.0347956418991089
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.7072203159332275
+      Yaw: 3.747223377227783
     Saved: ~
 Window Geometry:
   Camera:

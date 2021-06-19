@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
     
-    <arg name="localization_type" default="AMCL"/>
+    <arg name="localization_type" default="FIXED_ODOM"/>
     <!-- Possible variants
         FIXED_ODOM   
         AMCL
         GMAPPING
     -->
 	
-	<arg name="map" default="my_map"/>
+	<arg name="map" default="nothing"/>
 	<!-- Possible maps 
         nothing
         my_map
 		-->
 <!-- fixed odom -->
     <node if="$(eval localization_type == 'FIXED_ODOM')" pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
-        args="0 0 0 0 0 0 map odom 100"/>  
+        args="0 0 0 0 0 0 map odom 100">
+          <!--remap from="scan" to="/mark1/laser/scan"/-->
+  </node>		  
     
     <!-- Run the map server --> 
     <node if="$(eval localization_type == 'FIXED_ODOM')" name="map_server" pkg="map_server" type="map_server" args="$(find mark1)/src/mark1_2dnav/config/map_empty.yaml"/>    
@@ -58,10 +60,18 @@
         <param name="transform_tolerance" value="0.1"/>
         <param name="recovery_alpha_slow" value="0.0"/>
         <param name="recovery_alpha_fast" value="0.0"/>
+         
+		<param name="initial_pose_x" value="1"/>
+        <param name="initial_pose_y" value="1"/>
+        <param name="initial_pose_a" value="0.5"/>
         
+        <param name="initial_cov_xx" value="10"/>
+        <param name="initial_cov_yy" value="15"/>
+        <param name="initial_cov_aa" value="10"/>
+		
         <param name="use_map_topic" value="true"/>
         <param name="base_frame_id" value="base_link"/>
-        <remap from="scan" to="/mark1/laser/scan"/>
+        <remap from="scan" to="/scan"/>
         
     </node>
 
@@ -71,7 +81,7 @@
         <param name="maxRange" value="29"/>
         <param name="maxRange" value="30"/>
         
-        <remap from="scan" to="/mark1/laser/scan"/>        
+        <!--remap from="scan" to="/scan"/-->        
     </node>
 
     <include file="$(find mark1)/src/mark1_2dnav/launch/mark1_move_base.launch"/>

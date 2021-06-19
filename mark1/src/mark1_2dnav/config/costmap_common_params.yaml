@@ -1,6 +1,6 @@
-transform_tolerance: 1.5  # 0.2
+transform_tolerance: 0.5  # 0.2
 
-always_send_full_costmap: true
+always_send_full_costmap: false
 
 footprint: [[0.4, 0.4], [0.4, -0.4], [-0.4, -0.4], [-0.4, 0.4]]
 
@@ -18,35 +18,10 @@ inflation_layer:
   inflation_radius: 30.  # the bigger the better, defines where the gradient is
   cost_scaling_factor: 0.9  # 0.5 the bigger the steeper the gradient is
 
-obstacle_layer:
-    observation_sources: laser_scan
-    track_unknown_space: true
-    footprint_clearing_enabled: true
-    combination_method: 1  # 0 - overwrite, 1 - max, 99 - nothing
 
-    laser_scan: 
-        sensor_frame: hokuyo
-        data_type: LaserScan
-        topic: /mark1/laser/scan
-        marking: true
-        clearing: true
-        obstacle_range: 10.
-        raytrace_range: 12.
-        inf_is_valid: true
+observation_sources: laser_scan_sensor point_cloud_sensor
 
-depth_obstacle_layer:
-    observation_sources: point_cloud_kinect        
-    track_unknown_space: false
-    footprint_clearing_enabled: true
-    combination_method: 1  # 0 - overwrite, 1 - max, 99 - nothing
-        
-    point_cloud_kinect:
-        sensor_frame: depth_camera_optical
-        data_type: PointCloud2
-        topic: /mark1/depth/points
-        marking: true
-        clearing: true
-        min_obstacle_height: 0.1
-        max_obstacle_height: 0.8
-        obstacle_range: 4.
-        raytrace_range: 5.
+laser_scan_sensor: {sensor_frame: laser_link, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
+
+point_cloud_sensor: {sensor_frame: depth_camera_optical, data_type: PointCloud, topic: /mark1/depth/points, marking: true, clearing: true}
+

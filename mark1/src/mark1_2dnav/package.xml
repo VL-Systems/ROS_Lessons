@@ -55,7 +55,11 @@
   <build_export_depend>move_base</build_export_depend>
   
   <exec_depend>move_base</exec_depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
 
+  <depend>actionlib_msgs</depend> 
+  <exec_depend>message_generation</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

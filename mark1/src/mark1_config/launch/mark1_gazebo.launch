@@ -27,8 +27,8 @@
       <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
     
         <!-- fixed odom -->
-    <!--<node pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
-        args="0 0 0 0 0 0 map odom 100"/>    -->  
+    <!--node pkg="tf" type="static_transform_publisher" name="static_odom_broadcaster"
+        args="0 0 0 0 0 0 map odom 100"/-->     
     
     <!-- run gazebo and spawn mybot -->
     <include file="$(find mark1)/src/mark1_gazebo/launch/mark1_world.launch"/>

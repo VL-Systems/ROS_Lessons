@@ -34,7 +34,7 @@
 
 
  <!-- hokuyo -->
-  <gazebo reference="hokuyo">
+  <gazebo reference="laser_link">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -64,8 +64,8 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/mark1/laser/scan</topicName>
-        <frameName>hokuyo</frameName>
+        <topicName>/scan</topicName>
+        <frameName>laser_link</frameName>
       </plugin>
     </sensor>
   </gazebo>

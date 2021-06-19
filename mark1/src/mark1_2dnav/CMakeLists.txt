@@ -9,6 +9,9 @@ project(mark1_2dnav)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   move_base
+  rospy
+  std_msgs
+  actionlib_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -66,10 +69,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs  # Or other packages containing msgs
+  actionlib_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -103,9 +107,11 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES mark1_2dnav
-#  CATKIN_DEPENDS movebase
+  CATKIN_DEPENDS actionlib_msgs
+  move_base my_odom_configuration_dep my_sensor_configuration_dep my_tf_configuration_dep
 #  DEPENDS system_lib
 )
+
 
 ###########
 ## Build ##
